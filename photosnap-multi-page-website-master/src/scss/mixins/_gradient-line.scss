@@ -1,0 +1,14 @@
+@mixin gradientLine($width, $height, $top, $left) {
+	// &::before {
+		content: "";
+		position: absolute;
+		top: $top;
+		width: $width + "px";
+		height: $height + "px";
+		transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+		background: linear-gradient(26.57deg,
+				#ffc593 0%,
+				#bc7198 43.29%,
+				#5a77ff 83.33%);
+	// }
+}

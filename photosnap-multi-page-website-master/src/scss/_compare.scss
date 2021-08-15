@@ -1,0 +1,118 @@
+.compare {
+	margin: 0 30px;
+
+	h2 {
+		display: none;
+	}
+
+	table {
+		margin: 56px auto;
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	thead {
+		border-bottom: 1px solid #000;
+
+	}
+
+	tr {
+		th:is(:first-child),
+		td:is(:first-child) {
+			text-align: left;
+		}
+	}
+
+	th,
+	td {
+		padding: 20px 0;
+		font-size: 12px;
+		font-weight: 700;
+		text-align: center;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		border-bottom: 1px solid #000;
+	}
+
+	td {
+		border-bottom: 1px solid #DFDFDF;
+	}
+
+	@media only screen and (max-width: 715px) {
+		thead {
+			th:not(:first-child) {
+				display: none;
+			}
+		}
+
+		tbody {
+			display: block;
+
+			tr {
+				display: flex;
+				flex-wrap: wrap;
+				width: 100%;
+				border-bottom: 1px solid #DFDFDF;
+
+				td {
+					padding: 10px 0;
+					width: 100%;
+					border-bottom: 0;
+
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4) {
+						&::before {
+							display: block;
+							font-size: 10px;
+							letter-spacing: 1px;
+							text-transform: uppercase;
+							color: hsla(0, 0%, 0%, 50%);
+						}
+
+					}
+
+					&:nth-child(2) {
+						&::before {
+							content: 'Basic';
+						}
+					}
+					&:nth-child(3) {
+						&::before {
+							content: 'Pro';
+						}
+					}
+					&:nth-child(4) {
+						&::before {
+							content: 'Business';
+						}
+					}
+				}
+
+				td:not(:first-child) {
+					width: 33.33%;
+					text-align: left;
+				}
+			}
+			
+		}
+		
+	}
+
+	@media only screen and (min-width: 715px) {
+		& {
+			max-width: 730px;
+			margin: 80px auto 0;
+		}
+
+		h2 {
+			display: block;
+			text-align: center;
+		}
+
+		th,
+		td {
+			padding: 20px 24px;
+		}
+	}
+}

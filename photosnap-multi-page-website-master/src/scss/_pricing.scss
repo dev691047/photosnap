@@ -1,0 +1,157 @@
+.pricing {
+
+	&-tables {
+		margin: 30px;
+
+		@media only screen and (min-width: 1070px) {
+			& {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			&__row {
+				display: grid;
+				grid-template-columns: repeat(3, 350px);
+				gap: 30px;
+				place-content: center;
+				place-items: center;
+			}
+		}
+	}
+
+	&-billing {
+		margin: 40px auto;
+		text-align: center;
+
+		label {
+			display: flex;
+    		align-items: center;
+			justify-content: center;
+			font-size: 18px;
+		}
+
+		.checkbox {
+			order: 1;
+		}
+
+		span:is(:last-child) {
+			order: 2;
+		}
+	}
+
+	&-subscription {
+		padding: 48px 40px;
+		text-align: center;
+		background-color: #F5F5F5;
+
+		&__headline {text-transform: none;
+			font-size: 24px;
+			line-height: 1;
+		}
+		
+		&__text {
+			margin: 18px -10px 40px;
+		}
+
+		&__price {
+			font-size: 40px;
+		}
+
+		.button {
+			width: 100%;
+		}
+
+		&--pro {
+			position: relative;
+			background-color: var(--pure-black);
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				height: 6px;
+				background: linear-gradient(
+					180deg,
+				#ffc593 0%,
+				#bc7198 43.29%,
+				#5a77ff 83.33%
+				);
+			}
+
+			.pricing-subscription__headline,
+			.pricing-subscription__price {
+				color: var(--pure-white);
+			}
+
+			.pricing-subscription__text,
+			.pricing-subscription__duration {
+				color: hsla(0, 0%, 100%, 60%);
+			}
+		}
+
+		@media only screen and (max-width: 715px) {
+			.button {
+				margin-top: 40px;
+			}
+		}
+
+		@media only screen and (max-width: 1070px) {
+			&:not(:first-child) {
+				margin-top: 24px;
+			}
+		}
+
+		@media only screen and (min-width: 715px) and (max-width:1070px) {
+			& {
+				padding: 40px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr;
+				text-align: left;
+
+				> * {
+					grid-column-start: 1;
+				}
+
+				> div {
+					text-align: right;
+					grid-column-start: 2;
+					grid-row-start: 1;
+				}
+
+				&__price {
+					letter-spacing: 4px;
+				}
+			}
+
+		}
+
+		@media only screen and (min-width: 715px) {
+			&__text {
+				margin: 18px 0 32px;
+			}
+		}
+
+		@media only screen and (min-width: 1070px) {
+
+			& {
+				text-align: center;
+			}
+
+			&:not(.pricing-subscription--pro) {
+				height: 410px;
+			}
+
+			&__wrapper {
+				margin: 40px auto;
+			}
+
+			&--pro {
+				padding-top: 78px;
+				padding-bottom: 78px;
+				height: 470px;
+			}
+		}
+	}
+}

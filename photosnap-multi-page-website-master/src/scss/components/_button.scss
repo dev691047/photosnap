@@ -1,0 +1,41 @@
+button {
+  border: 0;
+  background: transparent;
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  padding: 14px 1em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--pure-white);
+  background-color: var(--pure-black);
+  transition: background 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  &:hover {
+    color: var(--pure-black);
+    background-color: var(--light-grey);
+  }
+
+  &--invert {
+    color: var(--pure-black);
+    background-color: var(--pure-white);
+  }
+}
+
+@media only screen and (min-width: 715px) {
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+
+    .header & {
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}

@@ -1,0 +1,168 @@
+@mixin whiteText() {
+  .block__heading {
+    color: var(--pure-white);
+  }
+
+  .block__text {
+    color: hsla(0, 0%, 100%, 60%);
+  }
+}
+
+.block {
+
+  &__content {
+    padding: 64px 33px;
+  }
+
+  &__text {
+    margin: 16px 0 0;
+    color: hsla(0, 0%, 0%, 60%);
+    line-height: 25px;
+
+    + .link {
+      margin-top: 23px;
+    }
+  }
+
+  &--invert {
+    .block__content {
+      position: relative;
+      background-color: var(--pure-black);
+    }
+
+    @include whiteText();
+  }
+
+  &--highlight {
+    .block__content {
+      position: relative;
+    }
+
+    .block__body {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 128px;
+        height: 6px;
+        transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+        background: linear-gradient(26.57deg,
+            #ffc593 0%,
+            #bc7198 43.29%,
+            #5a77ff 83.33%);
+      }
+    }
+  }
+
+  &--top {
+    @include whiteText();
+
+    .block__text {
+      margin: 20px 0 0;
+      color: hsla(0, 0%, 100%, 60%);
+    }
+
+    .block__headline {
+      font-size: 12px;
+      color: var(--pure-white);
+      text-transform: uppercase;
+    }
+
+    .block__credit {
+      font-size: 13px;
+      color: hsla(0, 0%, 100%, 75%);
+
+      span {
+        color: var(--pure-white);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 715px) {
+  .block {
+    display: flex;
+    justify-content: space-between;
+
+    &__content {
+      padding: 68px 3.6em;
+      width: 64.44%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    picture {
+      width: 35.54%;
+    }
+
+    &:nth-child(odd) {
+      picture {
+        order: 2;
+      }
+    }
+
+    &--top {
+      position: relative;
+      max-height: 650px;
+
+      picture {
+        width: 100%;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .block__content {
+        position: absolute;
+        left: 5em;
+        padding: 0;
+        width: 400px;
+        height: 100%;
+        background-color: transparent;
+      }
+    }
+
+    &--highlight {
+      .block__body {
+        position: relative;
+
+        &::before {
+          top: 0;
+          left: -3.6em;
+          width: 6px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1070px) {
+  .block {
+
+    &:not(.block--top) {
+      picture {
+        width: 57.63%;
+      }
+    }
+
+    &__content {
+      padding: 6em;
+      width: 42.36%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &--highlight {
+      .block__body {
+
+        &::before {
+          left: -6em;
+        }
+      }
+    }
+  }
+}

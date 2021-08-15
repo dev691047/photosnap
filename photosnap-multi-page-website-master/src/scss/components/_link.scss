@@ -1,0 +1,32 @@
+.link {
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+    width: 43px;
+    height: 14px;
+  }
+
+  &.black {
+    color: var(--pure-black);
+
+    &::after {
+      background-image: url(../../../assets/shared/desktop/arrow-dark.svg);
+    }
+  }
+
+  &.white {
+    color: var(--pure-white);
+
+    &::after {
+      background-image: url(../../../assets/shared/desktop/arrow-white.svg);
+    }
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

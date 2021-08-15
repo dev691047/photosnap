@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size-adjust: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  --accent-1: #ffc593;
+  --accent-2: #bc7198;
+  --accent-3: #5a77ff;
+
+  --pure-black: #000;
+  --pure-white: #fff;
+  --light-grey: #dfdfdf;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+h1,
+h2 {
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 767px) {
+  h1,
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+p {
+  color: hsla(0, 0%, 0%, 60%);
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.fit-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* @media only screen and (min-width: 1070px) {
+  .container {
+    width: 1110px;
+    margin: 0 auto;
+  }
+} */

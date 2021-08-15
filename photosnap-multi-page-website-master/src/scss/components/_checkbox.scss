@@ -1,0 +1,61 @@
+input[type="checkbox"] {
+	opacity: 0;
+    display: none;
+}
+
+input[type="checkbox"]:focus {
+	outline: none;
+}
+
+input[type="checkbox"]:not(:checked) ~ span:is(.monthly) {
+	font-weight: 700;
+} 
+
+input[type="checkbox"]:checked + .checkbox::before {
+	background: var(--pure-white);
+	transform: translateX(150%);
+}
+
+input[type="checkbox"]:checked + .checkbox::after {
+	background: var(--pure-black);
+}
+
+input[type="checkbox"]:checked ~ span:is(.yearly) {
+	font-weight: 700;
+} 
+
+.checkbox {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	cursor: pointer;
+	margin: 0 32px;
+	height: 32px;
+	width: 64px;
+}
+
+.checkbox::before,
+.checkbox::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.checkbox::before {
+	position: absolute;
+	top: 4px;
+	z-index: 2;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: var(--pure-black);
+	transform: translateX(20%);
+	transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.checkbox::after {
+	border-radius: 16px;
+	background: #DFDFDF;
+	transition: background 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
